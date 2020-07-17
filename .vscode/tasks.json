@@ -20,7 +20,7 @@
 			},
 			//the handle error output will be with gcc
 			"problemMatcher": [
-				"$gcc"
+				"$go"
 			],
 			"group": {
 				"kind": "build",
@@ -45,7 +45,7 @@
 				"cwd": "/usr/bin"
 			},
 			"problemMatcher": [
-				"$gcc"
+				"$go"
 			],
 			"group": {
 				"kind": "build",
