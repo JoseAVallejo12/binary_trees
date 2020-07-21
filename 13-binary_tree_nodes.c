@@ -1,38 +1,33 @@
 #include "binary_trees.h"
-/**
- * traversal_po - post order traversal binary tree
- * @root: root of the analyzed tree
- * @left_c: counter to the left
- * @right_c: counter to the right
- * Return: height of the binary tree
- */
-size_t traversal_po(const binary_tree_t *root, size_t left_c, size_t right_c)
+
+int travel_tree(const binary_tree_t *tree, size_t n_l, size_t n_r)
 {
-	if (!root)
-		return (-1);
-	if (root != NULL)
-	{
-		left_c = traversal_po(root->left, left_c, right_c) + 1;
-		right_c = traversal_po(root->right, left_c, right_c) + 1;
-		if (right_c > left_c)
-			return (right_c);
-		return (left_c);
-	}
+	if (tree == NULL)
+		return (1);
+
+	n_l += travel_tree(tree->left, n_l, n_r);
+	n_r += travel_tree(tree->right, n_l, n_r);
+
+	if (n_l > n_r)
+		return n_l;
+	else
+		return n_r;
 }
+
+
 /**
- * binary_tree_nodes - measures the level down of an node binary tree
- * @tree: pointer to the root node of the tree to measure the height
- * Return: height of the tree
+ * binary_tree_leaves - counts the leaves in a binary tree
+ * @tree:  pointer to the root node of the tree to count the number of leaves
+ * Return: number of leaves
  */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t left_c, right_c, height;
-	left_c = right_c = 0;
-	if (!tree)
+	size_t node_r, node_l;
+	node_r = 0;
+	node_l = 0;
+	if (tree == NULL)
 		return (0);
-	height = 0;
-	if (tree->parent == NULL)
-		height = 1;
-	height += traversal_po(tree, left_c, right_c);
-	return (height);
+
+	return(travel_tree(tree, node_l, node_r) - 1);
+
 }
