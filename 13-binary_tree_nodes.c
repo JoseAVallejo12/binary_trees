@@ -10,11 +10,14 @@ size_t traversal_po(const binary_tree_t *root, size_t left_c, size_t right_c)
 {
 	if (!root)
 		return (-1);
-	left_c = traversal_po(root->left, left_c, right_c) + 1;
-	right_c = traversal_po(root->right, left_c, right_c) + 1;
-	if (right_c > left_c)
-		return (right_c);
-	return (left_c);
+	if (root != NULL)
+	{
+		left_c = traversal_po(root->left, left_c, right_c) + 1;
+		right_c = traversal_po(root->right, left_c, right_c) + 1;
+		if (right_c > left_c)
+			return (right_c);
+		return (left_c);
+	}
 }
 /**
  * binary_tree_nodes - measures the level down of an node binary tree
