@@ -1,23 +1,23 @@
 #include "binary_trees.h"
 /**
- * traversal_po - post order traversal binary tree
+ * traversal - post order traversal binary tree
  * @root: root of the analyzed tree
- * @left_c: counter to the left
- * @right_c: counter to the right
- * Return: height of the binary tree
+ * @cnt_r: counter to the left
+ * @cnt_l: counter to the right
+ * Return: size of the binary tree
  */
 size_t traversal(const binary_tree_t *root, size_t cnt_r, size_t cnt_l)
 {
 	if (!root)
 		return (-1);
-	cnt_l = traversal(root->left,cnt_r, cnt_l) + 1;
-	cnt_r = traversal(root->right,cnt_r, cnt_l) + 1;
-	return (cnt_l + cnt_r );
+	cnt_l = traversal(root->left, cnt_r, cnt_l) + 1;
+	cnt_r = traversal(root->right, cnt_r, cnt_l) + 1;
+	return (cnt_l + cnt_r);
 }
 /**
- * binary_tree_height - measures the height of a binary tree
+ * binary_tree_size - measures the height of a binary tree
  * @tree: pointer to the root node of the tree to measure the height
- * Return: height of the tree
+ * Return: size of the tree
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
