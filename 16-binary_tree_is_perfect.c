@@ -7,6 +7,7 @@
 int left_depth(const binary_tree_t *tree)
 {
 	int d = 0;
+
 	while (tree != NULL)
 	{
 		d++;
@@ -46,6 +47,7 @@ int perfection(const binary_tree_t *tree, int depth, int level)
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int depth, level;
+
 	level = 0;
 	if (!tree)
 		return (0);
