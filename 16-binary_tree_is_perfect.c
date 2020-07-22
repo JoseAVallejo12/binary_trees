@@ -32,22 +32,6 @@ size_t height(const binary_tree_t *tree)
 	height = traversal_p(tree, left_c, right_c);
 	return (height);
 }
-
-/**
- * binary_tree_balance - check balancer of binary tree
- * @tree:  pointer to the root node of the tree to count the number of leaves
- * Return: balancer
- */
-int binary_tree_balance(const binary_tree_t *tree)
-{
-	if (tree == NULL)
-		return (0);
-
-	if (tree->left == NULL && tree->right == NULL)
-		return (0);
-
-	return (height(tree->left) - height(tree->right));
-}
 /**
  * binary_tree_is_full - checks if a binary tree is full
  * @tree: pointer to the root node of the tree to check
@@ -79,7 +63,10 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-	if (binary_tree_balance(tree) == 0 && binary_tree_is_full(tree) == 1)
-		return (1);
+	if (height(tree->left) == height(tree->right))
+	{
+		if (binary_tree_is_full(tree))
+			return (1);
+	}
 	return (0);
 }
