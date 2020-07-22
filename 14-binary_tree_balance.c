@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 /**
  * traversal_p - post order traversal binary tree
- * @root: root of the analyzed tree
+ * @tree: root of the analyzed tree
  * @left_c: counter to the left
  * @right_c: counter to the right
  * Return: height of the binary tree
