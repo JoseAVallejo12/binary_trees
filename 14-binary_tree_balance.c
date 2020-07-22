@@ -18,6 +18,7 @@ int _is_a_leaf(const binary_tree_t *node)
  * @tree:  pointer to the root node of the tree to count the number of leaves
  * Return: number of leaves
  */
+
 size_t height(const binary_tree_t *tree)
 {
 	size_t right_c, left_c;
@@ -33,6 +34,12 @@ size_t height(const binary_tree_t *tree)
 	return (left_c + right_c);
 }
 
+/**
+ * binary_tree_balance - check balancer of binary tree
+ * @tree:  pointer to the root node of the tree to count the number of leaves
+ * Return: balancer
+ */
+
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	int h_l, h_r;
@@ -44,7 +51,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 
 	h_l = height(tree->left);
 	h_r = height(tree->right);
-	printf("h_l is %d\th_r is %d", h_l, h_r);
 
 	return (h_l - h_r);
 }
