@@ -1,7 +1,7 @@
 # 0x1D. C - Binary trees
 [![twitter jose](https://img.shields.io/twitter/follow/JoseAVallejo12?style=for-the-badge)](https://twitter.com/JoseAVallejo12)
 [![twitter andres](https://img.shields.io/twitter/follow/AndresHugueth?style=for-the-badge)](https://twitter.com/AndresHugueth)
-
+![plattaform](https://img.shields.io/powershellgallery/p/DNS.1.1.1.1?style=for-the-badge)
 
 ![img](https://s3.amazonaws.com/issac-ghost/2019/03/preorder-traversal.gif)
 ![img](https://s3.amazonaws.com/issac-ghost/2019/03/inorder-traversal.gif)
